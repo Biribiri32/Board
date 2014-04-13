@@ -35,6 +35,8 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,15 +44,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoardUI.Designer.cs">
+      <DependentUpon>BoardUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tiles\DoorTile.cs" />
-    <Compile Include="Tiles\EmptyTile.cs" />
-    <Compile Include="Tiles\Tile.cs" />
-    <Compile Include="Tiles\WallTile.cs" />
+    <Compile Include="Tiles\DoorTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tiles\EmptyTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tiles\Tile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tiles\WallTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BoardUI.resx">
+      <DependentUpon>BoardUI.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

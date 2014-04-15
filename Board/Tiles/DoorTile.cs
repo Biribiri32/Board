@@ -18,6 +18,8 @@ namespace Board.Tiles
             DoorOpen = isOpen;
             BackColor = Color.Brown;
             Size = new Size(TileSize, TileSize);
+			
+			SaveData = "| DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + "|";
         }
     }
 }

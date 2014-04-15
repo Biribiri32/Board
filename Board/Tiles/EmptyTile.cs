@@ -14,9 +14,21 @@ namespace Board.Tiles
         public EmptyTile (int x, int y)
         {
             X = x;
+			
             Y = y;
-            BackColor = Color.Azure;
+			
+            BackColor = Color.Green;
+			
             Size = new Size(TileSize, TileSize);
+			
+			string objectsOnTile = ":";
+			
+			foreach(string obj in OnTile)
+			{
+				objectsOnTile += obj + ":";
+			|}
+			
+			SaveData = "| ET[" + X + "," + Y + "]L<" + objectsOnTile +"> |";
         }
     }
 }

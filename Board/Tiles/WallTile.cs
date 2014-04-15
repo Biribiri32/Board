@@ -18,6 +18,8 @@ namespace Board.Tiles
             EdgeTile = isEdge;
             BackColor = Color.Black;
             Size = new Size(TileSize, TileSize);
+			
+			SaveData = "| WT[" + X + "," + Y + "]B" + EdgeTile.ToString() + "|";
         }
     }
 }

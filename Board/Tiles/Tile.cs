@@ -18,6 +18,8 @@ namespace Board.Tiles
 
         public int X { get; set; }
         public int Y { get; set; }
+		
+		public string SaveData { get; set; }
 
         protected const int TileSize = 20;
     }

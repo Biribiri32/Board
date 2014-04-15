@@ -19,7 +19,7 @@ namespace Board.Tiles
             BackColor = Color.Brown;
             Size = new Size(TileSize, TileSize);
 			
-			SaveData = "| DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + "|";
+			SaveData = "| DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + " |";
         }
     }
 }

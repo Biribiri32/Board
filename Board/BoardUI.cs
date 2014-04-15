@@ -13,18 +13,18 @@ namespace Board
 {
     public partial class BoardUI : Form
     {
-        public BoardUI(Tile[,] tiles)
+        public BoardUI()
         {
             InitializeComponent();
 
-            AddTiles(tiles);
+            //AddTiles(tiles);
         }
 
-        public void AddTiles(Tile[,] tiles)
+        public void AddTiles(List<List<Tile>> tiles)
         {
-            foreach(Tile tile in tiles)
+            foreach(List<Tile> tile in tiles)
             {
-                GameBoard.Controls.Add(tile);
+                
             }
         }
     }

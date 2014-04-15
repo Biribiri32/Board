@@ -20,13 +20,17 @@ namespace Board.Tiles
             BackColor = Color.Green;
 			
             Size = new Size(TileSize, TileSize);
+
+            OnTile = new List<string>();
+
+            OnTile.Add("N/A");
 			
 			string objectsOnTile = ":";
 			
 			foreach(string obj in OnTile)
 			{
 				objectsOnTile += obj + ":";
-			|}
+			}
 			
 			SaveData = "| ET[" + X + "," + Y + "]L<" + objectsOnTile +"> |";
         }

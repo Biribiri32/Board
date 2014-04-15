@@ -28,26 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GameBoard = new System.Windows.Forms.FlowLayoutPanel();
+            this.boardPanel = new Board.BoardPanel();
             this.SuspendLayout();
             // 
-            // GameBoard
+            // boardPanel
             // 
-            this.GameBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.GameBoard.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.GameBoard.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.GameBoard.Location = new System.Drawing.Point(12, 12);
-            this.GameBoard.Name = "GameBoard";
-            this.GameBoard.Size = new System.Drawing.Size(906, 599);
-            this.GameBoard.TabIndex = 0;
-            this.GameBoard.WrapContents = false;
+            this.boardPanel.Location = new System.Drawing.Point(12, 12);
+            this.boardPanel.Name = "boardPanel";
+            this.boardPanel.Size = new System.Drawing.Size(581, 437);
+            this.boardPanel.TabIndex = 0;
             // 
             // BoardUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 623);
-            this.Controls.Add(this.GameBoard);
+            this.ClientSize = new System.Drawing.Size(605, 461);
+            this.Controls.Add(this.boardPanel);
             this.Name = "BoardUI";
             this.Text = "BoardUI";
             this.ResumeLayout(false);
@@ -56,6 +52,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel GameBoard;
+        private BoardPanel boardPanel;
+
     }
 }

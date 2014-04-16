@@ -7,7 +7,8 @@ using System.Windows.Forms;
 
 namespace Board.Tiles
 {
-    public abstract class Tile : Panel
+    [Serializable]
+    public class Tile : Panel
     {
         protected enum TileType
         {
@@ -21,6 +22,6 @@ namespace Board.Tiles
 		
 		public string SaveData { get; set; }
 
-        protected const int TileSize = 20;
+        public const int TileSize = 20;
     }
 }

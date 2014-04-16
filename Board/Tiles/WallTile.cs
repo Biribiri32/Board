@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Board.Tiles
 {
+    [Serializable]
     public class WallTile : Tile
     {
         public bool EdgeTile { get; set; }

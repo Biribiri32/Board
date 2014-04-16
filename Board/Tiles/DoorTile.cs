@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Board.Tiles
 {
-    class DoorTile : Tile
+    [Serializable]
+    public class DoorTile : Tile
     {
         public bool DoorOpen { get; set; }
 

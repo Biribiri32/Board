@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Board.Tiles
 {
-    class EmptyTile : Tile
+    [Serializable]
+    public class EmptyTile : Tile
     {
         private List<string> OnTile { get; set; }
 

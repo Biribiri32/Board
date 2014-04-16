@@ -44,12 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BoardUI.Designer.cs">
-      <DependentUpon>BoardUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="BoardPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -70,11 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="BoardUI.resx">
-      <DependentUpon>BoardUI.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

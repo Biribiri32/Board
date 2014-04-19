@@ -16,9 +16,12 @@ namespace Board.Tiles
         {
             X = x;
             Y = y;
+
+            DrawTile = new Rectangle(x, y, TileSize, TileSize);
+
+            SolidBrush blueBrush = new SolidBrush(Color.Coral);
+
             DoorOpen = isOpen;
-            BackColor = Color.Brown;
-            Size = new Size(TileSize, TileSize);
 			
 			SaveData = "| DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + " |";
         }

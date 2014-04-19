@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 namespace Board.Tiles
 {
     [Serializable]
-    public class Tile : Panel
+    public abstract class Tile
     {
         protected enum TileType
         {
@@ -21,6 +22,8 @@ namespace Board.Tiles
         public int Y { get; set; }
 		
 		public string SaveData { get; set; }
+
+        public Rectangle DrawTile { get; set; }
 
         public const int TileSize = 20;
     }

@@ -16,9 +16,12 @@ namespace Board.Tiles
         {
             X = x;
             Y = y;
+
+            DrawTile = new Rectangle(x, y, TileSize, TileSize);
+
+            SolidBrush blueBrush = new SolidBrush(Color.Blue);
+
             EdgeTile = isEdge;
-            BackColor = Color.Black;
-            Size = new Size(TileSize, TileSize);
 			
 			SaveData = "| WT[" + X + "," + Y + "]B" + EdgeTile.ToString() + " |";
         }

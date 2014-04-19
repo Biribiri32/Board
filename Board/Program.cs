@@ -11,9 +11,6 @@ namespace Board
     {
         public static void Main(string[] args)
         {
-            //RoomUI UI = new RoomUI();
-            
-            //UI.ShowDialog();
         }
     }
 }

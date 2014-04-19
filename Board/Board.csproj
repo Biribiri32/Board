@@ -44,23 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tiles\DoorTile.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Tiles\EmptyTile.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Tiles\Tile.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Tiles\WallTile.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Tiles\DoorTile.cs" />
+    <Compile Include="Tiles\EmptyTile.cs" />
+    <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Tiles\WallTile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

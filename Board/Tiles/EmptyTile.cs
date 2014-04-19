@@ -17,10 +17,10 @@ namespace Board.Tiles
             X = x;
 			
             Y = y;
-			
-            BackColor = Color.Green;
-			
-            Size = new Size(TileSize, TileSize);
+
+            DrawTile = new Rectangle(x, y, TileSize, TileSize);
+
+            SolidBrush blueBrush = new SolidBrush(Color.Blue);
 
             OnTile = new List<string>();
 

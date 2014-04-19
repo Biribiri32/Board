@@ -18,13 +18,15 @@ namespace Board.Tiles
             Door = 1 << 2
         };
 
+        public const int TILE_SIZE = 20;
+
         public int X { get; set; }
         public int Y { get; set; }
+
+        public Rectangle DrawTile { get; set; }
 		
 		public string SaveData { get; set; }
 
-        public Rectangle DrawTile { get; set; }
-
-        public const int TileSize = 20;
+        public Color TileColor { get; set; }
     }
 }

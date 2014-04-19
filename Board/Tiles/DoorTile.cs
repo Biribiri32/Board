@@ -17,13 +17,13 @@ namespace Board.Tiles
             X = x;
             Y = y;
 
-            DrawTile = new Rectangle(x, y, TileSize, TileSize);
-
-            SolidBrush blueBrush = new SolidBrush(Color.Coral);
+            DrawTile = new Rectangle(x, y, TILE_SIZE, TILE_SIZE);
 
             DoorOpen = isOpen;
 			
 			SaveData = "| DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + " |";
+
+            TileColor = Color.Lime;
         }
     }
 }

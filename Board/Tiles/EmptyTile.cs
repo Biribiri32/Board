@@ -18,9 +18,7 @@ namespace Board.Tiles
 			
             Y = y;
 
-            DrawTile = new Rectangle(x, y, TileSize, TileSize);
-
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
+            DrawTile = new Rectangle(x, y, TILE_SIZE, TILE_SIZE);
 
             OnTile = new List<string>();
 
@@ -34,6 +32,8 @@ namespace Board.Tiles
 			}
 			
 			SaveData = "| ET[" + X + "," + Y + "]L<" + objectsOnTile +"> |";
+
+            TileColor = Color.Coral;
         }
     }
 }

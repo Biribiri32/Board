@@ -11,9 +11,11 @@ namespace Board
     {
         public static void Main(string[] args)
         {
-            BoardTestUI t = new BoardTestUI();
+            //BoardTestUI t = new BoardTestUI();
 
-            t.ShowDialog();
+            //t.ShowDialog();
+
+            BoardStateReader b = new BoardStateReader();
         }
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="BoardPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BoardStateReader.cs" />
     <Compile Include="BoardTestUI.cs">
       <SubType>Form</SubType>
     </Compile>

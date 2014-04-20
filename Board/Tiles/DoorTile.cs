@@ -21,7 +21,7 @@ namespace Board.Tiles
 
             DoorOpen = isOpen;
 			
-			SaveData = "| DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + " |";
+			SaveData = "|DT[" + X + "," + Y + "]B" + DoorOpen.ToString() + "|";
 
             TileColor = Color.Lime;
         }

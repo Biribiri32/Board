@@ -21,7 +21,7 @@ namespace Board.Tiles
 
             EdgeTile = isEdge;
 			
-			SaveData = "| WT[" + X + "," + Y + "]B" + EdgeTile.ToString() + " |";
+			SaveData = "|WT[" + X + "," + Y + "]B" + EdgeTile.ToString() + "|";
 
             TileColor = Color.DarkOrange;
         }

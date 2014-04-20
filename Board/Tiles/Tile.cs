@@ -11,7 +11,7 @@ namespace Board.Tiles
     [Serializable]
     public abstract class Tile
     {
-        protected enum TileType
+        public enum TileType
         {
             Empty = 1 << 0,
             Wall = 1 << 1,

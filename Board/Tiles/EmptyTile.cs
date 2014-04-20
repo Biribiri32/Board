@@ -31,7 +31,7 @@ namespace Board.Tiles
 				objectsOnTile += obj + ":";
 			}
 			
-			SaveData = "| ET[" + X + "," + Y + "]L<" + objectsOnTile +"> |";
+			SaveData = "|ET[" + X + "," + Y + "]L<" + objectsOnTile +">|";
 
             TileColor = Color.Coral;
         }

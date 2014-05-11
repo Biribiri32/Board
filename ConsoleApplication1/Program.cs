@@ -1,4 +1,5 @@
-﻿using SpellDeck.SpellDeckTests;
+﻿using SpellDeck.CardFiles;
+using SpellDeck.SpellDeckTests;
 using System;
 using System.Collections.Generic;
 using System.Linq;

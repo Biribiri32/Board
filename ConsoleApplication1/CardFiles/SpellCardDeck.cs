@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpellDeck
+namespace SpellDeck.CardFiles
 {
     public class SpellCardDeck : List<SpellCard>
     {

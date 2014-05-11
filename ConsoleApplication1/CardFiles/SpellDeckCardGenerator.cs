@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpellDeck
+namespace SpellDeck.CardFiles
 {
     public class SpellDeckCardGenerator
     {
@@ -33,10 +33,11 @@ namespace SpellDeck
             GenerateDeck();
         }
 
-        private SpellCard GetRandomSpellCard()
-        {
-            return data.TestSpellDeck[random.Next(0, data.TestSpellDeck.Count)];
-        }
+        //private SpellCard GetRandomSpellCard()
+        //{
+        //    //return data.TestSpellDeck[random.Next(0, data.TestSpellDeck.Count)];
+        //    //return data.Proportions
+        //}
 
         private void GenerateDeck()
         {
@@ -66,6 +67,11 @@ namespace SpellDeck
         private void GetAverage()
         {
             AverageCost = AverageCost / SpellDeckParameters.MAX_DECK_SIZE;
+        }
+
+        public SpellCard GetRandomSpellCard()
+        {
+            return ProportionValue.ChooseByRandom(data.Proportions);
         }
     }
 }

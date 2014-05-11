@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpellDeck
+namespace SpellDeck.CardFiles
 {
     public abstract class Card
     {
@@ -15,5 +15,9 @@ namespace SpellDeck
         public int Cost { get; set; }
 
         public string Effect { get; set; }
+
+        public double Probablilty { get; set; }
+
+        public ProportionValue<SpellCard> Proportion { get; set; }
     }
 }

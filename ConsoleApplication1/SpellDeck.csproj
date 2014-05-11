@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card\Card.cs" />
-    <Compile Include="Card\SpellCard.cs" />
-    <Compile Include="Card\SpellCardDeck.cs" />
-    <Compile Include="Card\SpellDeckCardGenerator.cs" />
+    <Compile Include="CardFiles\Card.cs" />
+    <Compile Include="CardFiles\ProportionValue.cs" />
+    <Compile Include="CardFiles\SpellCard.cs" />
+    <Compile Include="CardFiles\SpellCardDeck.cs" />
+    <Compile Include="CardFiles\SpellDeckCardGenerator.cs" />
     <Compile Include="Constants\SpellDeckConsoleMessages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

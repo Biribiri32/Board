@@ -11,7 +11,7 @@ namespace SpellDeck
         /// <summary>
         /// Maximum number of spell cards in deck.
         /// </summary>
-        public const int MAX_DECK_SIZE = 50;
+        public const int MAX_DECK_SIZE = 20;
 
         /// <summary>
         /// Starting spell cards drawn.

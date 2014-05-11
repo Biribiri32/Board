@@ -17,6 +17,8 @@ namespace SpellDeck.CardFiles
 
         public int HighestCost { get; set; }
 
+        public Dictionary<string, int> CurrentCardsUsedByID { get; set; }
+
         private CardData data;
         private Random random;
 
@@ -30,20 +32,31 @@ namespace SpellDeck.CardFiles
             AverageCost = 0;
             HighestCost = 0;
 
+            InitilizeCurrentCardsUsedById();
+
             GenerateDeck();
         }
 
-        //private SpellCard GetRandomSpellCard()
-        //{
-        //    //return data.TestSpellDeck[random.Next(0, data.TestSpellDeck.Count)];
-        //    //return data.Proportions
-        //}
+        private void InitilizeCurrentCardsUsedById()
+        {
+            CurrentCardsUsedByID = new Dictionary<string, int>();
+
+            foreach(SpellCard card in data.TestSpellDeck)
+            {
+                CurrentCardsUsedByID.Add(card.CardId, 0);
+            }
+        }
 
         private void GenerateDeck()
         {
             for (int cardNum = 0; cardNum < SpellDeckParameters.MAX_DECK_SIZE; cardNum++ )
             {
-                SpellCard randomCard = GetRandomSpellCard();
+                SpellCard randomCard = null;
+
+                while(randomCard == null)
+                {
+                    randomCard = GetRandomSpellCard();
+                }
 
                 int randomCost = randomCard.Cost;
 
@@ -71,7 +84,34 @@ namespace SpellDeck.CardFiles
 
         public SpellCard GetRandomSpellCard()
         {
-            return ProportionValue.ChooseByRandom(data.Proportions);
+            SpellCard returnCard = null;
+            int CurrentNumberUsed = 0, MaxValueUsed = 0;
+
+            while (returnCard == null)
+            {
+                SpellCard cardTemp = ProportionValue.ChooseByRandom(data.Proportions);
+
+                CurrentCardsUsedByID.TryGetValue(cardTemp.CardId, out CurrentNumberUsed);
+                data.CardsUsedByID.TryGetValue(cardTemp.CardId, out MaxValueUsed);
+
+                if (CurrentNumberUsed < MaxValueUsed)
+                {
+                    CurrentCardsUsedByID[cardTemp.CardId]++;
+
+                    returnCard = cardTemp;
+                }
+                else if (CurrentNumberUsed == MaxValueUsed)
+                {
+                    var temp = data.Proportions.Find(p => p == cardTemp.Proportion);
+
+                    // Don't generate anymore of this card.
+                    temp.Proportion = 0.0;
+
+                    break;
+                }
+            }
+
+            return returnCard;
         }
     }
 }

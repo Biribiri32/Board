@@ -18,6 +18,8 @@ namespace SpellDeck.CardFiles
 
         public double Probablilty { get; set; }
 
+        public int MaxCopiesOfCard { get; set; }
+
         public ProportionValue<SpellCard> Proportion { get; set; }
     }
 }

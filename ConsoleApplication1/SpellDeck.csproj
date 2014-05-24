@@ -46,8 +46,11 @@
     <Compile Include="CardFiles\SpellCard.cs" />
     <Compile Include="CardFiles\SpellCardDeck.cs" />
     <Compile Include="CardFiles\SpellDeckCardGenerator.cs" />
+    <Compile Include="Constants\DeckIOProperties.cs" />
     <Compile Include="Constants\SpellDeckConsoleMessages.cs" />
-    <Compile Include="DeckSaver.cs" />
+    <Compile Include="DeckIO\DeckLoader.cs" />
+    <Compile Include="DeckIO\DeckProgramFunctions.cs" />
+    <Compile Include="DeckIO\DeckSaver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants\SpellDeckParameters.cs" />
@@ -56,6 +59,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

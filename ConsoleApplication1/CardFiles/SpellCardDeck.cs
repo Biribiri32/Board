@@ -8,6 +8,8 @@ namespace SpellDeck.CardFiles
 {
     public class SpellCardDeck : List<SpellCard>
     {
+        public string DeckName { get; set; }
+
         public SpellCardDeck() { }
 
         public void PrintDeck(bool showShort)

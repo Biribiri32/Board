@@ -12,42 +12,35 @@ namespace SpellDeck
     {
         static void Main(string[] args)
         {
+            DeckProgramFunctions func = new DeckProgramFunctions();
+
+            bool done = false, showShort = true;
+
             while (true)
             {
-                bool showShort = false, done = false;
+                done = false;
 
                 Console.Write(SpellDeckConsoleMessages.WELCOME_MESSAGE);
 
                 while (!done)
                 {
+                    Console.Write(SpellDeckConsoleMessages.MENU);
+                
                     switch (Console.ReadLine().ToUpper())
                     {
-                        case "Y":
-                        case "YES":
-                            showShort = true;
-                            done = true;
+                        case "G":
+                        case "GEN":
+                            func.Generate(ref done, ref showShort);
+                            Console.WriteLine();
                             break;
-                        case "N":
-                        case "NO":
-                            showShort = false;
-                            done = true;
+                        case "L":
+                        case "LOAD":
+                            func.Load(ref done, ref showShort);
                             break;
                         default:
                             break;
                     }
                 }
-
-                SpellDeckCardGenerator generator = new SpellDeckCardGenerator();
-
-                generator.GeneratedDeck.PrintDeck(showShort);
-
-                Console.WriteLine(SpellDeckConsoleMessages.POST_DECK_MESSAGE, generator.TotalCardsGenerated, generator.AverageCost, generator.HighestCost);
-
-                Console.WriteLine(SpellDeckConsoleMessages.SHUFFLE_DECK);
-
-                SpellDeckOperations.Shuffle(generator.GeneratedDeck);
-
-                generator.GeneratedDeck.PrintDeck(showShort);
             }
         }
     }

@@ -40,9 +40,11 @@ namespace SpellDeck.SpellDeckTests
 
                 CardsUsedByID.Add(card.CardId, card.MaxCopiesOfCard);
             }
+        }
 
-            
-
+        public SpellCard GetSpellCardByID(string id)
+        {
+            return TestSpellDeck.FirstOrDefault(c => c.CardId == id);
         }
         
     }

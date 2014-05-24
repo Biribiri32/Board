@@ -13,5 +13,7 @@ namespace SpellDeck
         public const string GENERATOR_MESSAGE = "Aether Adept Spell Deck being generated...";
 
         public const string POST_DECK_MESSAGE = "---\nCards Generated: {0} | Average Cost: {1} | Highest Cost: {2}\n---";
+
+        public const string SHUFFLE_DECK = "Shuffling Deck";
     }
 }

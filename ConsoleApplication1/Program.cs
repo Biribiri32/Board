@@ -39,15 +39,16 @@ namespace SpellDeck
 
                 SpellDeckCardGenerator generator = new SpellDeckCardGenerator();
 
-                foreach (SpellCard card in generator.GeneratedDeck)
-                {
-                    Console.WriteLine(card.ToString(showShort));
-                }
+                generator.GeneratedDeck.PrintDeck(showShort);
 
                 Console.WriteLine(SpellDeckConsoleMessages.POST_DECK_MESSAGE, generator.TotalCardsGenerated, generator.AverageCost, generator.HighestCost);
-            }
 
-            //Console.ReadLine();
+                Console.WriteLine(SpellDeckConsoleMessages.SHUFFLE_DECK);
+
+                SpellDeckOperations.Shuffle(generator.GeneratedDeck);
+
+                generator.GeneratedDeck.PrintDeck(showShort);
+            }
         }
     }
 }

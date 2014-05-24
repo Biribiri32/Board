@@ -8,6 +8,15 @@ namespace SpellDeck.CardFiles
 {
     public class SpellCardDeck : List<SpellCard>
     {
+        public SpellCardDeck() { }
+
+        public void PrintDeck(bool showShort)
+        {
+            foreach (SpellCard card in this)
+            {
+                Console.WriteLine(card.ToString(showShort));
+            }
+        }
     }
 
      public static class SpellDeckOperations

@@ -8,6 +8,13 @@ namespace SpellDeck.CardFiles
 {
     public abstract class Card
     {
+        public enum CardState
+        {
+            Deck,
+            Hand,
+            Discard
+        };
+
         public string CardId { get; set; }
 
         public string Name { get; set; }
@@ -21,5 +28,7 @@ namespace SpellDeck.CardFiles
         public int MaxCopiesOfCard { get; set; }
 
         public ProportionValue<SpellCard> Proportion { get; set; }
+
+        public CardState CardStatus { get; set; }
     }
 }

@@ -53,9 +53,13 @@ namespace SpellDeck
 
             string deckName = Console.ReadLine();
 
+            SpellCardDeck loadedDeck = null;
+
             try
             {
-                DeckLoader.Load(deckName).PrintDeck(showShort);
+                loadedDeck = DeckLoader.Load(deckName);
+
+                loadedDeck.PrintDeck(showShort);
             }
             catch(FileNotFoundException)
             {
@@ -63,7 +67,6 @@ namespace SpellDeck
 
                 Load(ref done, ref showShort);
             }
-            
         }
     }
 }

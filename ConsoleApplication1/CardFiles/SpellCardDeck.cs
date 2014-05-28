@@ -12,6 +12,46 @@ namespace SpellDeck.CardFiles
 
         public SpellCardDeck() { }
 
+        public List<SpellCard> Draw(int numberOfCards)
+        {
+            List<SpellCard> retVal = new List<SpellCard>();
+
+            int  selectedCards = 0, idx = 0;
+
+            while(selectedCards <= numberOfCards)
+            {
+                SpellCard card = null;
+
+                try
+                {
+                    card = this[idx];
+                }
+                catch(ArgumentOutOfRangeException)
+                {
+                    // Reset the deck
+                    idx = 0;
+
+                    SpellDeckOperations.Shuffle(this);
+                }
+
+                if (card != null && card.CardStatus == Card.CardState.Deck)
+                {
+                    card.CardStatus = Card.CardState.Hand;
+
+                    retVal.Add(card);
+
+                    selectedCards++;
+                }
+                else
+                {
+                    idx++;
+                }
+
+            }
+
+            return retVal;
+        }
+
         public void PrintDeck(bool showShort)
         {
             foreach (SpellCard card in this)
@@ -23,19 +63,24 @@ namespace SpellDeck.CardFiles
 
      public static class SpellDeckOperations
      {
-         public static void Shuffle<T>(this IList<T> list)
+         public static void Shuffle<T>(this IList<T> deck)
          {
              Random rng = new Random();
 
-             int n = list.Count;
+             int n = deck.Count;
 
              while (n > 1)
              {
                  n--;
                  int k = rng.Next(n + 1);
-                 T value = list[k];
-                 list[k] = list[n];
-                 list[n] = value;
+                 T value = deck[k];
+                 deck[k] = deck[n];
+                 deck[n] = value;
+             }
+
+             foreach(SpellCard card in (List<SpellCard>)deck)
+             {
+                 card.CardStatus = Card.CardState.Deck;
              }
          }
      }

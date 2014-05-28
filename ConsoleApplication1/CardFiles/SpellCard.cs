@@ -16,6 +16,7 @@ namespace SpellDeck.CardFiles
             this.Effect = effect;
             this.Probablilty = probability;
             this.MaxCopiesOfCard = maxCopiesOfCard;
+            this.CardStatus = CardState.Deck;
 
             StartCardGeneration();
         }

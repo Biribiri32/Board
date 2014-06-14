@@ -14,7 +14,8 @@ namespace SpellDeck
 
         public const string MENU = "Main Menu:\n" 
             + "[G/Gen]: Generate a new deck\n"
-            + "[L/Load]: Load an existing deck\n\n"
+            + "[L/Load]: Load an existing deck\n"
+            + "[E/EXIT]: Exit deck manager\n\n"
             + "Please make a choice: ";
 
         public const string GENERATOR_MESSAGE = "Aether Adept Spell Deck being generated...";

@@ -8,10 +8,8 @@ namespace SpellDeck.DeckIO
 {
     public class ConsoleDeckManager
     {
-        public bool RunDeckManager()
+        public bool RunDeckManager(DeckProgramFunctions func)
         {
-            DeckProgramFunctions func = new DeckProgramFunctions();
-
             bool done = false, showShort = true;
 
             while (true)

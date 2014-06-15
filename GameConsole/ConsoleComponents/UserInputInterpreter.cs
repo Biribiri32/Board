@@ -1,4 +1,6 @@
-﻿using GameConsole.ConsoleComponents;
+﻿using ClassManager.ClassComponents;
+using ClassManager.GameClasses.MagicalGirl;
+using GameConsole.ConsoleComponents;
 using SpellDeck.DeckIO;
 using System;
 using System.Collections.Generic;
@@ -12,19 +14,39 @@ namespace GameConsole.ConsoleCommands
     {
         ConsoleDeckManager _manager = new ConsoleDeckManager();
 
+        ConsoleLogic _logic = new ConsoleLogic();
+
+        public UserInputInterpreter()
+        {
+
+        }
+
         public void Interpreter(string command)
         {
             switch(command.ToUpper())
             {
                 case "RUN":
-                    ConsoleLogic.RunGame();
+                    _logic.RunGame();
                     break;
                 case "DECK":
-                    ConsoleLogic.DeckManager(_manager);
+                    _logic.DeckManager(_manager);
                     break;
                 case "CLASS":
+                    _logic.SelectClass();
                     break;
             }
+        }
+
+        public GameClass ClassInterpreter(string command)
+        {
+            switch(command.ToUpper().Replace(" ", string.Empty))
+            {
+                case "MG":
+                case "MAGICALGIRL":
+                    return new MagicalGirl();
+            }
+
+            return null;
         }
     }
 }

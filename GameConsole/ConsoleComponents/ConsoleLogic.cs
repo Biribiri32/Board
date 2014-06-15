@@ -1,4 +1,6 @@
-﻿using GameConsole.ConsoleCommands;
+﻿using ClassManager.ClassComponents;
+using GameConsole.ConsoleCommands;
+using SpellDeck;
 using SpellDeck.DeckIO;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,11 @@ namespace GameConsole.ConsoleComponents
         // Start at Home
         private string Location = MainConsoleMessages.LOC_HOME;
 
-        UserInputInterpreter _interpreter = new UserInputInterpreter();
+        private GameClass CurrentClass;
+
+        UserInputInterpreter _interpreter;
+
+        DeckGenerator _generator;
 
         public void RunConsole()
         {
@@ -22,6 +28,8 @@ namespace GameConsole.ConsoleComponents
 
         private void Welcome()
         {
+            _interpreter = new UserInputInterpreter();
+
             while (true)
             {
                 Console.Write(MainConsoleMessages.PROMPT, Location);
@@ -30,19 +38,50 @@ namespace GameConsole.ConsoleComponents
             }
         }
 
-        public static void RunGame()
+        public void RunGame()
         {
 
         }
 
-        public static void DeckManager(ConsoleDeckManager manager)
+        public void DeckManager(ConsoleDeckManager manager)
         {
             bool closeManager = false;
 
-            while (!closeManager)
+            if (SelectClass())
             {
-                closeManager = manager.RunDeckManager();
+                _generator = new DeckGenerator(CurrentClass);
+
+                DeckProgramFunctions func = new DeckProgramFunctions(_generator.GetGenerator());
+
+                while (!closeManager)
+                {
+                    closeManager = manager.RunDeckManager(func);
+                }
             }
+        }
+
+        public bool SelectClass()
+        {
+            _interpreter = new UserInputInterpreter();
+
+            Console.Write(MainConsoleMessages.CLASS_SELECT_MESSAGE);
+
+            GameClass value = _interpreter.ClassInterpreter(Console.ReadLine()); 
+
+            if(value != null)
+            {
+                CurrentClass = value;
+
+                Console.Write(MainConsoleMessages.CURR_CLASS, CurrentClass.Name);
+
+                return true;
+            }
+            else 
+            {
+                Console.Write(MainConsoleMessages.CLASS_SELECT_MESSAGE_ERROR);
+            }
+
+            return false;
         }
     }
 }

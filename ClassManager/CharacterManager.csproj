@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7354321-AEE6-4A7F-897A-5E2C50F94B29}</ProjectGuid>
+    <ProjectGuid>{61AD5BFB-3DA2-460C-91ED-57E19F9BFBA2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GameConsole</RootNamespace>
-    <AssemblyName>GameConsole</AssemblyName>
+    <RootNamespace>ClassManager</RootNamespace>
+    <AssemblyName>ClassManager</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleComponents\ConsoleLogic.cs" />
-    <Compile Include="ConsoleComponents\MainConsoleMessages.cs" />
-    <Compile Include="ConsoleComponents\UserInputInterpreter.cs" />
+    <Compile Include="ClassComponents\DeckGenerator.cs" />
+    <Compile Include="ClassComponents\GameClass.cs" />
+    <Compile Include="ClassComponents\IGameClass.cs" />
+    <Compile Include="GameClasses\MagicalGirl\MagicalGirl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,15 +52,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassManager\CharacterManager.csproj">
-      <Project>{61ad5bfb-3da2-460c-91ed-57e19f9bfba2}</Project>
-      <Name>CharacterManager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ConsoleApplication1\SpellDeck.csproj">
       <Project>{09ca503f-7b45-4bc5-938e-75f50a3d83eb}</Project>
       <Name>SpellDeck</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

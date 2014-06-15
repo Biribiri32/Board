@@ -14,10 +14,9 @@ namespace SpellDeck
 {
     public static class DeckLoader
     {
-        public static SpellCardDeck Load(string deckName)
+        public static SpellCardDeck Load(string deckName, CardData data)
         {
             SpellCardDeck retVal = new SpellCardDeck();
-            CardData data = new CardData();
 
             using (XmlReader reader = XmlReader.Create(Path.Combine(DeckIOProperties.DECK_SAVE_LOCATION, deckName + ".xml")))
             {

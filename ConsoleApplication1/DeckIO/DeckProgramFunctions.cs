@@ -1,4 +1,5 @@
 ﻿using SpellDeck.CardFiles;
+using SpellDeck.SpellDeckTests;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,14 @@ namespace SpellDeck
 {
     public class DeckProgramFunctions
     {
-        SpellDeckCardGenerator generator = new SpellDeckCardGenerator();
+        private SpellDeckCardGenerator _generator;
+
+        CardData data;
+
+        public DeckProgramFunctions(SpellDeckCardGenerator generator)
+        {
+            _generator = generator;
+        }
 
         public void Generate(ref bool done, ref bool showShort)
         {
@@ -30,9 +38,9 @@ namespace SpellDeck
                     break;
             }
 
-            generator.GeneratedDeck.PrintDeck(showShort);
+            _generator.GeneratedDeck.PrintDeck(showShort);
 
-            Console.WriteLine(SpellDeckConsoleMessages.POST_DECK_MESSAGE, generator.TotalCardsGenerated, generator.AverageCost, generator.HighestCost);
+            Console.WriteLine(SpellDeckConsoleMessages.POST_DECK_MESSAGE, _generator.TotalCardsGenerated, _generator.AverageCost, _generator.HighestCost);
 
             //Console.WriteLine(SpellDeckConsoleMessages.SHUFFLE_DECK);
 
@@ -42,9 +50,9 @@ namespace SpellDeck
 
             Console.Write(SpellDeckConsoleMessages.NAME_DECK);
 
-            generator.GeneratedDeck.DeckName = Console.ReadLine();
+            _generator.GeneratedDeck.DeckName = Console.ReadLine();
 
-            DeckSaver.Save(generator.GeneratedDeck);
+            DeckSaver.Save(_generator.GeneratedDeck);
         }
 
         public void Load(ref bool done, ref bool showShort)
@@ -57,7 +65,7 @@ namespace SpellDeck
 
             try
             {
-                loadedDeck = DeckLoader.Load(deckName);
+                loadedDeck = DeckLoader.Load(deckName, _generator.Data);
 
                 loadedDeck.PrintDeck(showShort);
             }

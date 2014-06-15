@@ -36,7 +36,7 @@ namespace Board
             }
             //int x = Convert.ToInt32(values[0]);
 
-            CreateTile(tileToCreate, TileType, );
+            //CreateTile(tileToCreate, TileType, );
         }
 
         private void CreateTile(ref Tile tile, string tileType, int x, int y, bool? stateBool)

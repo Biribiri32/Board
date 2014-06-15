@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellDeck", "ConsoleApplica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameConsole", "GameConsole\GameConsole.csproj", "{A7354321-AEE6-4A7F-897A-5E2C50F94B29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassManager", "ClassManager\ClassManager.csproj", "{61AD5BFB-3DA2-460C-91ED-57E19F9BFBA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterManager", "ClassManager\CharacterManager.csproj", "{61AD5BFB-3DA2-460C-91ED-57E19F9BFBA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

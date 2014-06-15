@@ -19,13 +19,15 @@ namespace SpellDeck.CardFiles
 
         public Dictionary<string, int> CurrentCardsUsedByID { get; set; }
 
-        private CardData data;
+        public CardData Data;
+
         private Random random;
 
-        public SpellDeckCardGenerator()
+        public SpellDeckCardGenerator(SpellCardDeck deckToGenerate)
         {
             random = new Random();
-            data = new CardData();
+
+            Data = new CardData(deckToGenerate);
 
             GeneratedDeck = new SpellCardDeck();
             TotalCardsGenerated = 0;
@@ -41,7 +43,7 @@ namespace SpellDeck.CardFiles
         {
             CurrentCardsUsedByID = new Dictionary<string, int>();
 
-            foreach(SpellCard card in data.TestSpellDeck)
+            foreach(SpellCard card in Data.ClassSpellDeck)
             {
                 CurrentCardsUsedByID.Add(card.CardId, 0);
             }
@@ -89,10 +91,10 @@ namespace SpellDeck.CardFiles
 
             while (returnCard == null)
             {
-                SpellCard cardTemp = ProportionValue.ChooseByRandom(data.Proportions);
+                SpellCard cardTemp = ProportionValue.ChooseByRandom(Data.Proportions);
 
                 CurrentCardsUsedByID.TryGetValue(cardTemp.CardId, out CurrentNumberUsed);
-                data.CardsUsedByID.TryGetValue(cardTemp.CardId, out MaxValueUsed);
+                Data.CardsUsedByID.TryGetValue(cardTemp.CardId, out MaxValueUsed);
 
                 if (CurrentNumberUsed < MaxValueUsed)
                 {
@@ -102,7 +104,7 @@ namespace SpellDeck.CardFiles
                 }
                 else if (CurrentNumberUsed == MaxValueUsed)
                 {
-                    var temp = data.Proportions.Find(p => p == cardTemp.Proportion);
+                    var temp = Data.Proportions.Find(p => p == cardTemp.Proportion);
 
                     // Don't generate anymore of this card.
                     temp.Proportion = 0.0;
